@@ -27,5 +27,13 @@ jobs:
         
     - name: Use Skopeo Tools Sync Image to Docker Hub
       run: |
-         skopeo copy docker://docker.io/hslr/sun-panel:1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/alibill/sun-panel:1.4.0
+         # skopeo copy docker://docker.io/hslr/sun-panel:1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/alibill/sun-panel:1.4.0
+         skopeo copy docker://docker.io/hectorqin/reader:latest docker://registry.cn-hangzhou.aliyuncs.com/alibill/reader:latest
+         skopeo copy docker://docker.io/python:3.10 docker://registry.cn-hangzhou.aliyuncs.com/alibill/python:3.10
+         skopeo copy docker://docker.io/ubuntu:22.04 docker://registry.cn-hangzhou.aliyuncs.com/alibill/ubuntu:22.04
+         skopeo copy docker://docker.io/mysql:8.0 docker://registry.cn-hangzhou.aliyuncs.com/alibill/mysql:8.0
+         skopeo copy docker://docker.io/postgres:latest docker://registry.cn-hangzhou.aliyuncs.com/alibill/postgres:latest
+         skopeo copy docker://docker.io/tdengine/tdengine:latest docker://registry.cn-hangzhou.aliyuncs.com/alibill/tdengine:latest
+         skopeo copy docker://docker.io/tdengine/tdengine:3.2.3.0 docker://registry.cn-hangzhou.aliyuncs.com/alibill/tdengine:3.2.3.0
+         skopeo copy docker://docker.io/apache/activemq-artemis:latest-alpine docker://registry.cn-hangzhou.aliyuncs.com/alibill/activemq-artemis:latest-alpine
       # 使用 skopeo 工具将镜像同步到阿里云个人仓库中，使用时请自行源和目标修改仓库名称和镜像名称
